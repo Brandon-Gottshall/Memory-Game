@@ -1,17 +1,17 @@
 body {
-text-align: center;
-margin: 0;
+  text-align: center;
+  margin: 0;
 }
 
 header {
-background-color: #F15B31;
-font-color: #FFFFFF;
-padding: 30px 20px;
+  background-color: #F15B31;
+  font-color: #FFFFFF;
+  padding: 30px 20px;
 }
 
-nav{
-background-color: #00A6B3;
-padding: 20px 0px;
+nav {
+  background-color: #00A6B3;
+  padding: 20px 0px;
 }
 
 main {
@@ -20,13 +20,18 @@ main {
 }
 
 a {
-font-family: Raleway;
-letter-spacing: 1px;
-font-weight: 600;
-font-size: 18px;
-text-decoration: none;
-margin: auto 20px;
-color: #FFFFFF;
+  font-family: Raleway;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  margin: auto 20px;
+  color: #FFFFFF;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  border-bottom: 2px solid white;
 }
 
 h1 {
@@ -46,7 +51,7 @@ h2 {
   font-size: 20px;
 }
 
-img{
+img {
   margin: 35px 8px auto;
 }
 
@@ -75,4 +80,18 @@ footer p {
 
 .message {
   float: right;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: " ";
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+
+.name {
+  color: #F15B31;
+  font-weight: 700;
 }
