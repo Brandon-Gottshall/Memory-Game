@@ -8,6 +8,31 @@ var cards = [
 var cardsInPlay = [];
 //Container for active cards
 
+var flipCard = function () {
+  var cardId = this.getAttribute('data-id');
+  console.log('user flipped ' + cards[cardId].rank);
+  cardsInPlay.push(cards[cardId].rank);
+  console.log(cards[cardId].cardImage);
+  console.log(cards[cardId].suit);
+  this.setAttribute('src', cards[cardId].cardImage);
+  if (cardsInPlay.length === 2) {
+    checkForMatch();
+  };
+};
+
+function createBoard () {
+  for (i = 0; i < cards.length; i++) {
+    //<img src="images/back.png" alt="Queen of Diamonds">
+    var cardElement = document.createElement('img');
+    cardElement.setAttribute('class', 'card');
+    cardElement.setAttribute('src', 'images/back.png');
+    cardElement.setAttribute('alt', (cards[i].rank + ' of ' + cards[i].suit));
+    cardElement.setAttribute('data-id', i);
+    cardElement.addEventListener('click', flipCard);
+    document.getElementById('game-board').appendChild(cardElement);
+  }
+};
+
 function checkForMatch () {
   if (cardsInPlay[0] === cardsInPlay[1]) {
     alert("You found a match!");
@@ -15,15 +40,6 @@ function checkForMatch () {
     alert("Sorry, try again");
 }}
 
-function flipCard(cardId) {
-  console.log('user flipped ' + cards[cardId].rank);
-  cardsInPlay.push(cards[cardId].rank);
-  console.log(cards[cardId].cardImage);
-  console.log(cards[cardId].suit);
-  if (cardsInPlay.length === 2) {
-    checkForMatch();
-  };
-};
 
-flipCard(0);
-flipCard(2);
+
+createBoard();
